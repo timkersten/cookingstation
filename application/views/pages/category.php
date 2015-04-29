@@ -1,0 +1,1 @@
+<p>Dit is de main-content van het category scherm. Op deze pagina komen de gerechten die tot een betreffende categorie behoren.</p>
