@@ -27,9 +27,9 @@ class Page extends CI_Controller {
 		$data['title'] = ucfirst($page);
 
 		// Laad de views in de juiste volgorde (top, main-content, bottom)
-		$this->load->view('templates/top', $data);
+		$this->load->view('templates/header', $data);
 		$this->load->view('pages/' .$page, $data);
-		$this->load->view('templates/bottom', $data);
+		$this->load->view('templates/footer', $data);
 
 	}
 

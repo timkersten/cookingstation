@@ -48,7 +48,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
+| 
+| Original default routes:
+| $route['default_controller'] = 'welcome';
+| $route['404_override'] = '';
+| $route['translate_uri_dashes'] = FALSE;
+|
 */
-$route['default_controller'] = 'welcome';
-$route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
+
+/* 
+ * Met custom routes kun je een url aan een specifieke controller en methode koppelen i.p.v. 
+ * de gebruikelijke normale conventie ( http://example.com/[controller-class]/[controller-method]/[arguments] ) 
+ * CodeIgniter leest routing regels van top to bottom. Zodra er een request binnenkomt zoekt codeIgniter naar 
+ * de eerste routing match en roept de geschikte controller en methode aan (mogelijk met argumenten).
+ */
+
+$route['default_controller'] = 'page/view';
+// Verwijs de user door naar de bijbehorende controller zodra er een request binnenkomt die niet gedefineerd staat in routes.php
+$route['(:any)'] = 'page/view/$1';
+
